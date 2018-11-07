@@ -1,0 +1,8 @@
+- name: Deploy Jenkins
+  hosts: jenkins
+  gather_facts: no
+  become: yes
+  become_method: sudo
+  roles:
+    - deploy_jenkins
+

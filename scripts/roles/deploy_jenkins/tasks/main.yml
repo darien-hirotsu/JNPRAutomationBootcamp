@@ -1,0 +1,25 @@
+- name: Update Package List
+  apt:
+    update_cache: yes
+    upgrade: yes
+
+- name: Install Java
+  apt:
+    name: default-jdk
+    state: present
+
+- name: Add repositroy key to the system
+  shell: |
+    wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+    echo deb https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list
+
+- name: Install Jenkins
+  apt:
+    update_cache: yes
+    name: jenkins
+    state: present
+
+- name: Start Jenkins Service
+  service:
+    name: jenkins
+    state: started

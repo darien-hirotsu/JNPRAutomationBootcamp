@@ -1,0 +1,12 @@
+[jenkins]
+localhost ansible_connection='local' ansible_sudo_pass='vagrant' ansible_user='vagrant'
+
+[arango]
+localhost ansible_connection='local' ansible_sudo_pass='vagrant' ansible_user='vagrant'
+
+[localhost]
+localhost ansible_python_interpreter=/home/chuck/.virtualenvs/automation_bootcamp/bin/python
+
+[VSRXS]
+10.11.12.1 ansible_python_interpreter=/home/chuck/.virtualenvs/automation_bootcamp/bin/python
+10.11.12.2 ansible_python_interpreter=/home/chuck/.virtualenvs/automation_bootcamp/bin/python
